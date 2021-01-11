@@ -11,10 +11,34 @@
                 ctx.strokeRect(10,10,200,150);
                 ctx.fillRect(50,40,120,90);
                 ctx.clearRect(90,65,40,40);
+
+                ctx.beginPath();
+                ctx.moveTo(250,10);
+                ctx.lineTo(250,150);
+                ctx.lineTo(400,150);
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.beginPath();
+                ctx.arc(200,300,90,0,360*Math.PI/180,false);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(450,240);
+                ctx.lineTo(450,100);
+                ctx.arc(530,100,80,180*Math.PI/180,270*Math.PI/180,false);
+                ctx.lineTo(600,20);
+                ctx.stroke();
+                
+                ctx.beginPath();
+                ctx.moveTo(700, 10);
+                ctx.arcTo(900, 10,800, 210,50);
+                ctx.lineTo(800,210); 
+                ctx.stroke();
             }
         </script>
     </head>
     <body>
-        <canvas id="myCanvas" width="640" height="400"></canvas>
+        <canvas id="myCanvas" width="1000" height="500"></canvas>
     </body>
 </html>
