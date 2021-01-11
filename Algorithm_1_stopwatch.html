@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <script>
+            window.onload = function(){
+                let display = document.querySelector('h1');
+                let btnStart = document.querySelector('#start');
+                let btnStop = document.getElementById('stop');
+
+                let min = 0;
+                let sec = 0;
+                let msc = 0;       
+                let timer;
+
+                btnStart.onclick = timeStart;
+                btnStop.onclick = null;
+
+                function timeflow(){
+                    msc++;
+
+                    if(msc>9){
+                        sec++;
+                        msc = 0;
+                    }
+                    if(sec > 59){
+                        min++;
+                        sec=0;
+                    }    
+                    display.innerHTML = `${min<10?`0${min}`:min}:${sec<10?`0${sec}`:sec}:${msc<10?`0${msc}`:msc}`;                
+                } 
+                
+                function timeStart(){
+                    timer = setInterval(timeflow, 100);   
+                    btnStart.onclick = null;                 
+                    btnStop.onclick = timeStop;
+                }
+                function timeStop(){
+                    clearInterval(timer);   
+                    btnStart.onclick = timeStart;                 
+                    btnStop.onclick = null;
+                }
+            }
+        </script>
+        <style>
+            h1{
+                width: 60%;
+                margin: 1em auto;
+                text-align: center;
+
+                font-size: 4em;              
+            }
+            div{
+                width: 60%;
+                margin: 0em auto;
+                text-align: center;
+            }
+            #start{
+                margin: 1em 1em;
+                width:18%;
+                height : 3em;
+
+                font-size: 1.25em;
+                color:crimson;
+                font-weight: bold;
+
+            }
+            #stop{
+                margin: 1em 1em;
+                width:18%;
+                height : 3em;
+
+                font-size: 1.25em;
+                color:darkblue;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>00:00:00</h1>
+        <div>
+            <input type="button" id="start" value="start">
+            <input type="button" id="stop" value= "stop">
+        </div>        
+    </body>
+</html>
