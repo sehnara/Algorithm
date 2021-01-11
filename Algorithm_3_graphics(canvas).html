@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Graphics</title>
+        <meta charset="utf-8"/>
+        <script>
+            window.onload = function(){
+                const Canvas = document.getElementById('myCanvas');
+
+                const ctx = Canvas.getContext('2d'); // 2d, webgl(3d)
+                ctx.strokeRect(10,10,200,150);
+                ctx.fillRect(50,40,120,90);
+                ctx.clearRect(90,65,40,40);
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="640" height="400"></canvas>
+    </body>
+</html>
