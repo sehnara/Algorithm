@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>bmi</title>
+        <meta charset="utf-8">
+        <script>
+            window.onload = function(){
+                const weight = document.querySelector("#weight");
+                const height = document.querySelector("#height");
+                const confirm = document.getElementById("confirm");  
+                let display = document.getElementById("bmi");              
+
+                function getBMI(){
+                    let w = weight.value; 
+                    let h = height.value;
+                    let bmi = 0;
+
+                    bmi = w/(h*h);
+                    display.innerHTML = `당신의 BMI 지수는 ${bmi}입니다.`;
+                }
+
+                confirm.onclick = getBMI;
+            }
+        </script>
+        <style>
+            * {
+                margin-bottom: 5px;
+            }
+            
+            form{
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+            }
+            p{
+                font-size: 2em;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="">
+            몸무게(kg) : <input type="text" id="weight">
+            키(m) : <input type="text" id="height">
+            <div>
+                <input type="button" id="confirm" value="확인">
+                <input type="reset">
+            </div>            
+        </form>
+            <p id="bmi">당신의 BMI 지수는 00입니다.</p>                    
+    </body>
+</html>
