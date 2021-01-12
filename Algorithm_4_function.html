@@ -2,29 +2,14 @@
 <html>    
     <head>
         <title></title>
-        <meta charset="utf-8"/>
-        <script>
-            window.onload = function(){
-                const diplay = document.querySelector('h1');
-                const arr1 = [2,3,4,8,6];
-                func1(arr1);
-
-                function func1(arr){
-                    diplay.innerHTML = arrSum(arr);
-
-                    function arrSum(a){
-                        let sum = 0;
-
-                        for (let i = 0; i < a.length; i++) {
-                            sum +=(arr[i])*(a[i]);
-                        }
-                        return Math.sqrt(sum);  
-                    }
-                }
-            }
-        </script>
+        <meta charset="utf-8"/> 
+        <!-- 1. 제곱 합의 제곱근 -->
+        <script src="Algorithm_4_01.js"></script> 
+        <!-- 2. quicksort -->
+        <script src="Algorithm_4_02.js"></script>        
     </head>
     <body>
         <h1></h1>
+        <h1 id="al2">ss</h1>
     </body>
 </html>
